@@ -45,6 +45,11 @@ const postsSlice = createSlice({
         postsAdapter.updateOne(state, action.payload);
       },
     },
+    deletePost: {
+      reducer(state, action) {
+        postsAdapter.removeOne(state, action.payload);
+      },
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -57,6 +62,6 @@ const postsSlice = createSlice({
       }),
 });
 
-export const { editPost, addNewPost } = postsSlice.actions;
+export const { editPost, addNewPost, deletePost } = postsSlice.actions;
 
 export default postsSlice.reducer;
